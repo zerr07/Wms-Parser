@@ -32,7 +32,7 @@ public class WorkerNotThread {
 
             if (tempProd.isValid()) {
                 /* First run only */
-                WMS.Queries.DeleteSupplierData(
+                /*WMS.Queries.DeleteSupplierData(
                         conn,
                         entry.getKey(),
                         "Dreamlove"
@@ -56,7 +56,7 @@ public class WorkerNotThread {
                                 entry.getKey(),
                                 code.getBarcode()
                         );
-                }
+                }*/
                 /* Delete and then create loc */
                 WMS.Queries.DeleteProductLocation(
                         conn,
@@ -71,9 +71,9 @@ public class WorkerNotThread {
                         "Dreamlove ladu",
                         tempProd.getStock().getSumQty()
                 );
-                System.out.println(counter + " " + entry.getKey() + " is valid | Create loc (first run recreate supplier) | " + ParserProcess.catalog.getSize()+"/"+initialSize+" "+Thread.currentThread().getName());
+                System.out.println(counter + " " + entry.getKey() + " is valid | Create loc | " + ParserProcess.catalog.getSize()+"/"+initialSize+" "+Thread.currentThread().getName());
             } else {
-                /* Delete and then create loc */
+                /* Delete loc */
                 WMS.Queries.DeleteProductLocation(
                         conn,
                         entry.getKey(),
