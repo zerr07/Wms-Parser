@@ -98,7 +98,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>AssParser</finalName>
+        <finalName>Parser</finalName>
     </build>
 
 </project>
